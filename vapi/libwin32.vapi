@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License file in the project root for more information.
  *-------------------------------------------------------------------------------------------*/
 
-[CCode (cheader_filename = "win32.h")]
+[CCode (cheader_filename = "vala-win32.h")]
 namespace Win32
 {
     delegate void Callback( Event event );
