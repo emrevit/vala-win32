@@ -44,10 +44,15 @@ cd /your/path/to/libs
 Download the libraries and their dependencies from the MSYS2 project (*as your project grows, you'll need to download additional libraries as well*):
 
 ```shell
-wget https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-glib2-2.72.3-1-any.pkg.tar.zst \
-     https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-pcre-8.45-1-any.pkg.tar.zst \
-     https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-zlib-1.2.12-1-any.pkg.tar.zst \
-     https://mirror.msys2.org/mingw/mingw32/mingw-w64-i686-libgee-0.20.5-2-any.pkg.tar.zst
+wget https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-glib2-2.72.3-1-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-pcre-8.45-1-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-zlib-1.2.12-1-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-libgee-0.20.5-2-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-libffi-3.3-4-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gcc-libs-12.1.0-3-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-libiconv-1.17-1-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-gettext-0.21-3-any.pkg.tar.zst \
+     https://repo.msys2.org/mingw/mingw32/mingw-w64-i686-libwinpthread-git-10.0.0.r59.gaacb650be-1-any.pkg.tar.zst
 ```
 
 Extract the packages:
@@ -76,10 +81,25 @@ and finally run `make` to build the sample:
 make
 ```
 
-before executing the sample, don't forget to copy all the required runtime binaries to the executable's directory:
+before executing the sample, copy all the required runtime binaries to the executable's directory (*don't forget to change the path*):
 
 ```shell
-cp /your/path/to/libs/mingw32/bin/{libgee-0.8-2.dll,libgio-2.0-0.dll,libglib-2.0-0.dll,libgmodule-2.0-0.dll,libgobject-2.0-0.dll,libpcre-1.dll,zlib1.dll} /path/to/executable's/dir
+while read file; do
+    cp "/your/path/to/libs/mingw32/bin/$file" ./build/bin/
+done << "EOL"
+    libffi-7.dll
+    libgcc_s_dw2-1.dll
+    libgee-0.8-2.dll
+    libgio-2.0-0.dll
+    libglib-2.0-0.dll
+    libgmodule-2.0-0.dll
+    libgobject-2.0-0.dll
+    libiconv-2.dll
+    libintl-8.dll
+    libpcre-1.dll
+    libwinpthread-1.dll
+    zlib1.dll
+EOL
 ```
 
 
