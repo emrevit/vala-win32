@@ -3,7 +3,7 @@ Vala Bindings for Native Windows Controls
 
 Though Vala is a quite capable language, when it comes to GUI programming, you don't have a lot of choice, or the choice should I say. The computer I use on a daily basis is a Linux machine with a GNOME desktop environment, so GTK is a reasonable choice for me to use when in need of a GUI toolkit, and I'm happy with that. But when I need to write an application that is supposed to run on Windows, I'd really prefer the look and feel of a native application. Hence the aim of this project is to provide the means of creating a Windows application with the native controls *(widgets)* using Vala.
 
-Below is a screen shot of the sample application of which you can find the source code [here](examples/encryptor.vala). If you'd like to try it out first, you can download the compiled binary here.
+Below is a screen shot of the sample application of which you can find the source code [here](examples/encryptor.vala). If you'd like to try it out first, you can download the compiled binary [here](https://github.com/emrevit/vala-win32/releases/download/Samples/samples_v0.1_win_x86_64.zip).
 
 <p align="center">
   <img src="./data/img/encryptor-win-7.png">
